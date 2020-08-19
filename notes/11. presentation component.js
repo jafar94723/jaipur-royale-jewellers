@@ -1,0 +1,4 @@
+/*
+functional component with no state
+
+*/

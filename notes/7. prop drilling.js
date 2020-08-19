@@ -1,0 +1,20 @@
+/*
+
+BAD PRACTISE
+tunneling props multiple children
+deep to get to the component that
+needs them
+
+
+Children in between dont need the 
+history
+
+
+
+we use withRouter for passing Route props
+to children
+It is a higher order component.
+a function that takes a component
+as an argument and returns a modified
+component.
+*/
