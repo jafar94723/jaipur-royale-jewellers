@@ -11,7 +11,7 @@ export const selectCollections = createSelector(
 
 export const selectCollection = memoize(collectionUrlParam => createSelector(
     [selectCollections],
-    collections => collections[collectionUrlParam]
+    collections => collections?collections[collectionUrlParam]:null
 ))
 
 /*
@@ -31,5 +31,5 @@ that's been stored.
 
 export const selectCollectionsForPreview = createSelector(
     [selectCollections],
-    collections => Object.values(collections)
+    collections => collections ? Object.values(collections) : []
 )

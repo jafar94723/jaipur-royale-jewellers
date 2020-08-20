@@ -13,7 +13,7 @@ const CartIcon = ({ itemCount, toggleCartHidden }) => (
         <span className='item-count'>{itemCount}</span>
     </div>
 )
-
+//selector not needed as primitive values need not be memoized as equality check will be true.
 const mapStateToProps = createStructuredSelector({
     itemCount: selectCartItemsCount
 })
