@@ -33,3 +33,13 @@ export const selectCollectionsForPreview = createSelector(
     [selectCollections],
     collections => collections ? Object.values(collections) : []
 )
+
+export const selectIsCollectionFetching = createSelector(
+    [selectShop],
+    shop => shop.isFetching
+)
+
+export const isCollectionsLoaded = createSelector(
+    [selectShop],
+    shop => !!shop.collections
+)
