@@ -26,6 +26,7 @@ class ShopPage extends React.Component{
     this.props.fetchCollectionsStart();
  }
   
+ //render is called before componentDidMount
   render(){
     const {match,isFetching,isCollectionsLoaded} = this.props;
     return (
