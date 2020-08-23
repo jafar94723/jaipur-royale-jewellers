@@ -49,15 +49,15 @@ class App extends React.Component {
       <Fragment>
         <Header />
         <Switch>
-          <Route exact path="/cara-sense-clothing-ltd" component={HomePage} />
-          <Route path="/cara-sense-clothing-ltd/shop" component={ShopPage} />
-          <Route exact path="/cara-sense-clothing-ltd/contact" component={ContactPage}/>
-          <Route exact path="/cara-sense-clothing-ltd/checkout" component={CheckOutPage} />
+          <Route exact path="/cara-sense-clothing-ltd/" component={HomePage} />
+          <Route path="/cara-sense-clothing-ltd/shop/" component={ShopPage} />
+          <Route exact path="/cara-sense-clothing-ltd/contact/" component={ContactPage}/>
+          <Route exact path="/cara-sense-clothing-ltd/checkout/" component={CheckOutPage} />
           <Route 
           exact 
-          path="/signin" 
+          path="/cara-sense-clothing-ltd/signin/" 
           render={()=>this.props.currentUser?
-          <Redirect to="/"/>
+          <Redirect to="/cara-sense-clothing-ltd/"/>
           :<SignInAndSignUpPage/>} />
         </Switch>
       </Fragment>
