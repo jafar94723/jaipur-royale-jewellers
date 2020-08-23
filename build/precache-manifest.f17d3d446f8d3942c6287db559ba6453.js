@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "28bd9ac11c228bd879954dea3e642a76",
+    "revision": "b07e84295ef56e9641b00a2d543e6dbc",
     "url": "/cara-sense-clothing-ltd/index.html"
   },
   {
-    "revision": "468b81e155a986f87ad0",
+    "revision": "f6c92a81c17d2926bc7f",
     "url": "/cara-sense-clothing-ltd/static/css/main.a9a4e22a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cara-sense-clothing-ltd/static/js/2.22c4a40d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "468b81e155a986f87ad0",
-    "url": "/cara-sense-clothing-ltd/static/js/main.999e788b.chunk.js"
+    "revision": "f6c92a81c17d2926bc7f",
+    "url": "/cara-sense-clothing-ltd/static/js/main.05f2bcb1.chunk.js"
   },
   {
     "revision": "148d2da3c302fa843618",
