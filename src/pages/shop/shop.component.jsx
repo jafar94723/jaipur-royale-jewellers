@@ -28,7 +28,7 @@ class ShopPage extends React.Component{
       <div className='shop-page'>
         {/* <Route exact path={`${match.path}`} render={(props) => <CollectionOverviewContainer {...props}/>} /> */}
         <Route exact path={`${match.path}`} component={CollectionOverviewContainer} />        
-        <Route path={`${match.url}/:collectionId`} component={CollectionPageContainer}/>} />
+        <Route path={`${match.url}/:collectionId`} component={CollectionPageContainer} />
       </div>
     );
   }
