@@ -8,7 +8,7 @@ const onToken = token => {
 }
 
 const StripeCheckoutButton = ({price}) =>{
-    const priceForStripe = price;
+    const priceForStripe = price*10;
     const API_KEY ='pk_test_51HHk9ZLUvIm4O0nMPciLpzyyF1reVqiINnatYVGYNdYpsqfek85Q8PcEXvrmseFX3iIIpRJeZzm4bwC1niBGC3Wc007jo2Fjnz';
 
     return (

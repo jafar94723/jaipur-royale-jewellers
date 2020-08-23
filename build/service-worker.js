@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cara-sense-clothing-ltd/precache-manifest.f17d3d446f8d3942c6287db559ba6453.js"
+  "/cara-sense-clothing-ltd/precache-manifest.755e9ccfde0179783dd859112a051244.js"
 );
 
 self.addEventListener('message', (event) => {
