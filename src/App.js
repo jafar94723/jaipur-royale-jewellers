@@ -49,10 +49,10 @@ class App extends React.Component {
       <Fragment>
         <Header />
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route exact path="/contact" component={ContactPage}/>
-          <Route exact path="/checkout" component={CheckOutPage} />
+          <Route exact path="/cara-sense-clothing-ltd" component={HomePage} />
+          <Route path="/cara-sense-clothing-ltd/shop" component={ShopPage} />
+          <Route exact path="/cara-sense-clothing-ltd/contact" component={ContactPage}/>
+          <Route exact path="/cara-sense-clothing-ltd/checkout" component={CheckOutPage} />
           <Route 
           exact 
           path="/signin" 

@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/cara-sense-clothing-ltd/static/css/main.a9a4e22a.chunk.css",
+    "main.js": "/cara-sense-clothing-ltd/static/js/main.999e788b.chunk.js",
+    "main.js.map": "/cara-sense-clothing-ltd/static/js/main.999e788b.chunk.js.map",
+    "runtime-main.js": "/cara-sense-clothing-ltd/static/js/runtime-main.e0031a38.js",
+    "runtime-main.js.map": "/cara-sense-clothing-ltd/static/js/runtime-main.e0031a38.js.map",
+    "static/js/2.22c4a40d.chunk.js": "/cara-sense-clothing-ltd/static/js/2.22c4a40d.chunk.js",
+    "static/js/2.22c4a40d.chunk.js.map": "/cara-sense-clothing-ltd/static/js/2.22c4a40d.chunk.js.map",
+    "index.html": "/cara-sense-clothing-ltd/index.html",
+    "precache-manifest.f4bf9f314b5b3fdedf9bddf31fcf2301.js": "/cara-sense-clothing-ltd/precache-manifest.f4bf9f314b5b3fdedf9bddf31fcf2301.js",
+    "service-worker.js": "/cara-sense-clothing-ltd/service-worker.js",
+    "static/css/main.a9a4e22a.chunk.css.map": "/cara-sense-clothing-ltd/static/css/main.a9a4e22a.chunk.css.map",
+    "static/js/2.22c4a40d.chunk.js.LICENSE.txt": "/cara-sense-clothing-ltd/static/js/2.22c4a40d.chunk.js.LICENSE.txt",
+    "static/media/logo.7e3fcd80.svg": "/cara-sense-clothing-ltd/static/media/logo.7e3fcd80.svg",
+    "static/media/shopping-bag.30f07071.svg": "/cara-sense-clothing-ltd/static/media/shopping-bag.30f07071.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e0031a38.js",
+    "static/js/2.22c4a40d.chunk.js",
+    "static/css/main.a9a4e22a.chunk.css",
+    "static/js/main.999e788b.chunk.js"
+  ]
+}
