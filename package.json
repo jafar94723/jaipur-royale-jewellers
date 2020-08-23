@@ -2,6 +2,7 @@
   "name": "cara-sense-clothing-ltd",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mak947.github.io/cara-sense-clothing-ltd",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
