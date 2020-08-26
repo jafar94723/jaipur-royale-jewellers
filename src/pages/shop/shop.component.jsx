@@ -3,7 +3,7 @@ import CollectionOverviewContainer from '../../components/collections-overview/c
 import { Route } from 'react-router-dom';
 import CollectionPageContainer from '../collection/collection.container';
 import {connect} from 'react-redux';
-import {fetchCollectionsStart} from '../../redux/shop/shop.actions';
+import {fetchCollectionsPending} from '../../redux/shop/shop.actions';
 
 
 //Route automatically passes 3 props to all Routes
@@ -18,7 +18,7 @@ class ShopPage extends React.Component{
 
   //DONT USE FETCH IN CONSTRUCTOR
   componentDidMount(){
-    this.props.fetchCollectionsStart();
+    this.props.fetchCollectionsPending();
  }
   
  //render is called before componentDidMount
@@ -34,10 +34,8 @@ class ShopPage extends React.Component{
   }
 }
 
-
-
 const mapDispatchToProps = dispatch =>({
-  fetchCollectionsStart:() => dispatch(fetchCollectionsStart())
+  fetchCollectionsPending:() => dispatch(fetchCollectionsPending())
 })
 
 export default connect(null,mapDispatchToProps)(ShopPage);

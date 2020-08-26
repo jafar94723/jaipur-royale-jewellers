@@ -67,3 +67,41 @@ const r2 = g2.next();
 const r3 = g2.next();
 //r3:{value:undefined,done:true}
 
+/*
+Purpose of saga middleware :-
+run sagas concurrently
+run them all together in a way
+that does not block the execution
+
+For e.g. :
+if we had multiple sagas that were 
+listening for different actions
+that were then triggering other functions
+we dont our code to wait for these
+functions to finish.
+
+takeEvery is an effect that creates a 
+non blocking call in order to 
+let other sagas continue running.
+
+
+task : kickstarting a saga.
+Also, we are able to cancel tasks.
+
+Say user clicked on fetch
+it creates a task
+user clicks again
+so we can cancel the old one
+
+At every yield,
+we're giving control over this saga
+back to saga middleware
+
+if saga middleware gets another
+takeEvery action call 
+it can decide to cancel any previous calls
+
+
+that's why we write yields in our 
+generator functions
+*/

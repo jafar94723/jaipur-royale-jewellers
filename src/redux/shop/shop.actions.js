@@ -39,7 +39,6 @@ export const fetchCollectionsStart = () => {
         }catch(e){
             dispatch(fetchCollectionsFailure(e.message))
         }
-
     }
 }
 /*
