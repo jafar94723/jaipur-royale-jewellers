@@ -12,16 +12,16 @@ import {selectCurrentUser} from '../../redux/user/user.selectors';
 
 const Header = ({currentUser,hidden}) => (
     <div className='header'>
-        <Link to='/cara-sense-clothing-ltd/' className='logo-container'>
+        <Link to='/' className='logo-container'>
             <Logo className='logo' />
         </Link>
         <div className='options'>
-            <Link className='option' to='/cara-sense-clothing-ltd/shop/'>SHOP</Link>
-            <Link className='option' to='/cara-sense-clothing-ltd/contact/'>CONTACT</Link>
+            <Link className='option' to='/shop'>SHOP</Link>
+            <Link className='option' to='/contact'>CONTACT</Link>
             {
                 currentUser?
                 <div className='option' onClick={()=>auth.signOut()}>SIGN OUT</div>
-                :<Link className='option' to='/cara-sense-clothing-ltd/signin/'>SIGN IN</Link>
+                :<Link className='option' to='/signin'>SIGN IN</Link>
             }
             <CartIcon/>
         </div>

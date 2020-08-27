@@ -6,38 +6,18 @@ import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up
 import CheckOutPage from './pages/checkout/checkout.component';
 import Header from "./components/header/header.component";
 import { Switch, Route,Redirect } from "react-router-dom";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-//import {addCollectionAndDocuments} from "./firebase/firebase.utils";
 import { connect } from "react-redux";
-import { setCurrentUser } from "./redux/user/user.actions";
 import {createStructuredSelector} from 'reselect';
 import {selectCurrentUser} from './redux/user/user.selectors';
-//import {selectCollectionsForPreview} from './redux/shop/shop.selectors';
 import ContactPage from './pages/contact/contact.component';
+import {checkUserSession} from './redux/user/user.actions';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
-  componentDidMount() {
-    const { setCurrentUser } = this.props;
-    //const {collectionsArray} = this.props;
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-
-        userRef.onSnapshot((snapshot) => {
-          setCurrentUser({
-            id: snapshot.id,
-            ...snapshot.data(),
-          });
-        });
-                                                                      //return new objects with only values that we wanna keep
-        //addCollectionAndDocuments('collections',collectionsArray.map(({title,items}) => ({title, items})));
-
-      } else {
-        setCurrentUser(null);
-      }
-    });
+  componentDidMount(){
+    const {checkUserSession} = this.props;
+    checkUserSession();
   }
 
   componentWillUnmount() {
@@ -49,15 +29,15 @@ class App extends React.Component {
       <Fragment>
         <Header />
         <Switch>
-          <Route exact path="/cara-sense-clothing-ltd/" component={HomePage} />
-          <Route path="/cara-sense-clothing-ltd/shop/" component={ShopPage} />
-          <Route exact path="/cara-sense-clothing-ltd/contact/" component={ContactPage}/>
-          <Route exact path="/cara-sense-clothing-ltd/checkout/" component={CheckOutPage} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/shop" component={ShopPage} />
+          <Route exact path="/contact" component={ContactPage}/>
+          <Route exact path="/checkout" component={CheckOutPage} />
           <Route 
           exact 
-          path="/cara-sense-clothing-ltd/signin/" 
+          path="/signin" 
           render={()=>this.props.currentUser?
-          <Redirect to="/cara-sense-clothing-ltd/"/>
+          <Redirect to="/"/>
           :<SignInAndSignUpPage/>} />
         </Switch>
       </Fragment>
@@ -67,51 +47,10 @@ class App extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser : selectCurrentUser,
-  //collectionsArray: selectCollectionsForPreview
 })
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
-});
+  checkUserSession:()=>dispatch(checkUserSession())
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
-
-/*
-mapDispatchToProps is a function 
-that gets dispatch property,
-and returns an object
-where the prop name will be 
-whatever prop we want to pass in
-that dispatches the new action
-that we're trying to pass.
-
-*/
-
-
-/*
-dispatch is a way for redux to know
-that whatever object you're passing me
-is going to be an action object that 
-I'm going to pass to every reducer.
-
-internally,
-redux calls mapDispatchToProps(dispatch)
-and returns an object of all props!
-One of the props is setCurrentUser mapped to a function
-where the function is defined as below :
-
-It uses Closure to save dispatch.
-
-
-mapDispatchToProps will return this :-
-{
-setCurrentUser : user => dispatch({type:'SET_CURRENT_USER',
-                  payload:user})
-}
-
-now whenever setCurrentUser is called,
-dispatch({}) will be called that will 
-alert all reducers and correct
-reducer will do what it must.
-
-*/
+export default connect(mapStateToProps,mapDispatchToProps)(App);
