@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
-import {auth} from '../../firebase/firebase.utils';
 import './header.style.scss';
 import {connect} from 'react-redux';
 import CartIcon from '../cart-icon/cart-icon.component';
@@ -9,8 +8,8 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import {createStructuredSelector} from 'reselect';
 import {selectCartHidden} from '../../redux/cart/cart.selectors';
 import {selectCurrentUser} from '../../redux/user/user.selectors';
-
-const Header = ({currentUser,hidden}) => (
+import {signOutStart} from '../../redux/user/user.actions';
+const Header = ({currentUser,hidden,signOutStart }) => (
     <div className='header'>
         <Link to='/' className='logo-container'>
             <Logo className='logo' />
@@ -20,7 +19,7 @@ const Header = ({currentUser,hidden}) => (
             <Link className='option' to='/contact'>CONTACT</Link>
             {
                 currentUser?
-                <div className='option' onClick={()=>auth.signOut()}>SIGN OUT</div>
+                <div className='option' onClick={signOutStart}>SIGN OUT</div>
                 :<Link className='option' to='/signin'>SIGN IN</Link>
             }
             <CartIcon/>
@@ -29,18 +28,13 @@ const Header = ({currentUser,hidden}) => (
     </div>
 );
 
-//passes rootReducer automatically
 const mapStateToProps = createStructuredSelector({
     currentUser:selectCurrentUser,
     hidden:selectCartHidden
 })
 
-/*
-//this gets passed the rootReducer
-const mapStateToProps = rootReducer =>({
-    currentUser:selectCurrentUser(rootReducer),
-    hidden:selectCartHidden(rootReducer)
+const mapDispatchToProps = dispatch => ({
+    signOutStart:() => dispatch(signOutStart())
 })
-*/
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps,mapDispatchToProps)(Header);
