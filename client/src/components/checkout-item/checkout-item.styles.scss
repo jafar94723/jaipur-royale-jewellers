@@ -7,9 +7,17 @@
   font-size: 20px;
   align-items: center;
 
+  @media screen and (max-width: 800px) {
+    font-size: 18px;
+  }
+
   .image-container {
     width: 23%;
     padding-right: 15px;
+
+    @media screen and (max-width: 800px) {
+      width: 22%;
+    }
 
     img {
       width: 100%;
@@ -23,14 +31,14 @@
   }
 
   .quantity {
-    display:flex;
-    
-    .arrow{
+    display: flex;
+
+    .arrow {
       cursor: pointer;
     }
 
-    .value{
-      margin:0 10px;
+    .value {
+      margin: 0 10px;
     }
   }
 
