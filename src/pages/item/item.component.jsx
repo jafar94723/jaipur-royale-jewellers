@@ -3,11 +3,10 @@ import './item.styles.scss';
 import { connect } from 'react-redux';
 import { selectItem } from '../../redux/shop/shop.selectors';
 const ItemPage = ({ item }) => {
-    const imgSrc = require(`../../assets/images/${item.imageUrl}`)
     return (
         <div className='item-container'>
             <div className='item-image'>
-                <img src={`${imgSrc}`} alt="" />
+                <img src={`${item.imageUrl}`} alt="" />
             </div>
             <div className='item-info'>
                 <h1>Name : {item.name}</h1>
