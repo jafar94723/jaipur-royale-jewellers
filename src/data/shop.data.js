@@ -9,6 +9,13 @@ const collections = {
         type:"necklaces",
         price: 25,
       },
+      {
+        id: 2,
+        imageUrl:"https://instagram.fjai1-2.fna.fbcdn.net/v/t51.2885-15/e35/117988289_1048784088871095_7337407022385297917_n.jpg?_nc_ht=instagram.fjai1-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=n3mDuQMRMbQAX-R3Yjo&_nc_tp=18&oh=388345116511e68aa579273d8fd2aa81&oe=5F7A14F7",
+        name: "jozaf",
+        type:"necklaces",
+        price: 55,
+      },
     ],
     routeName: "necklaces",
     title: "Necklaces",
